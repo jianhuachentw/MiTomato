@@ -1,0 +1,200 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mint.mitomato.ui.SettingFragment"
+    android:id="@+id/constraintLayout">
+
+    <Button
+        style="@style/ButtonStyle"
+        android:text="@string/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_or_unpair"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/setting_item_margin_top" />
+
+    <TextView
+        android:text="@string/paired_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/paired_title"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/paired_info"
+        tools:layout_constraintBaseline_creator="1" />
+
+    <TextView
+        android:text="@string/paired_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/paired_info"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@+id/paired_title"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/search_or_unpair"
+        android:layout_marginTop="@dimen/setting_sub_item_margin_top"
+        tools:layout_constraintTop_creator="1" />
+
+    <Button
+        style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/test_vibrate"
+        android:text="@string/test_vibrate"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@+id/search_or_unpair"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/setting_item_margin_top"
+        tools:layout_constraintTop_creator="1" />
+
+    <TextView
+        style="@style/SettingTextStyle"
+        android:text="@string/work_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/work_duration_text"
+        tools:text="Work Duration"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/paired_title"
+        android:layout_marginTop="@dimen/setting_item_margin_top"
+        tools:layout_constraintTop_creator="1" />
+
+    <TextView
+        style="@style/SettingTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/work_duration_value"
+        tools:text="25:00"
+        app:layout_constraintLeft_toRightOf="@+id/work_duration_text"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintBaseline_toBaselineOf="@+id/work_duration_text" />
+
+    <SeekBar
+        style="@style/seekbar_style"
+        android:layout_height="wrap_content"
+        android:id="@+id/work_duration_seekbar"
+        app:layout_constraintLeft_toLeftOf="@+id/work_duration_text"
+        app:layout_constraintTop_toBottomOf="@+id/work_duration_text"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="@dimen/setting_sub_item_margin_top"
+        android:layout_width="0dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        style="@style/SettingTextStyle"
+        android:text="@string/break_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/break_duration_text"
+        tools:text="Break Duration"
+        app:layout_constraintLeft_toLeftOf="@+id/work_duration_text"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/work_duration_seekbar"
+        android:layout_marginTop="@dimen/setting_item_margin_top"
+        tools:layout_constraintTop_creator="1" />
+
+    <TextView
+        style="@style/SettingTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/break_duration_value"
+        tools:text="5:00"
+        app:layout_constraintLeft_toRightOf="@+id/break_duration_text"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/break_duration_text" />
+
+    <SeekBar
+        style="@style/seekbar_style"
+        android:layout_height="wrap_content"
+        android:id="@+id/break_duration_seekbar"
+        app:layout_constraintLeft_toLeftOf="@+id/work_duration_text"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/break_duration_text"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="@dimen/setting_sub_item_margin_top"
+        android:layout_width="0dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        style="@style/SettingTextStyle"
+        android:text="@string/long_break_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/long_break_duration_text"
+        tools:text="Long Break Duration"
+        app:layout_constraintLeft_toLeftOf="@+id/work_duration_text"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/break_duration_seekbar"
+        android:layout_marginTop="@dimen/setting_item_margin_top"
+        tools:layout_constraintTop_creator="1" />
+
+    <TextView
+        style="@style/SettingTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/long_break_duration_value"
+        tools:text="15:00"
+        app:layout_constraintLeft_toRightOf="@+id/long_break_duration_text"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/long_break_duration_text" />
+
+    <SeekBar
+        style="@style/seekbar_style"
+        android:layout_height="wrap_content"
+        android:id="@+id/long_break_duration_seekbar"
+        app:layout_constraintLeft_toLeftOf="@+id/work_duration_text"
+        app:layout_constraintTop_toBottomOf="@+id/long_break_duration_text"
+        android:layout_marginTop="@dimen/setting_sub_item_margin_top"
+        android:layout_width="0dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        style="@style/SettingTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/long_break_interval_text"
+        tools:text="Long Break Interval"
+        android:text="@string/long_break_interval"
+        app:layout_constraintLeft_toLeftOf="@+id/work_duration_text"
+        app:layout_constraintTop_toBottomOf="@+id/long_break_duration_seekbar"
+        android:layout_marginTop="@dimen/setting_item_margin_top" />
+
+    <TextView
+        style="@style/SettingTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/long_break_interval_value"
+        tools:text="3"
+        app:layout_constraintLeft_toRightOf="@+id/long_break_interval_text"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintBaseline_toBaselineOf="@+id/long_break_interval_text" />
+
+    <SeekBar
+        style="@style/seekbar_style"
+        android:layout_height="wrap_content"
+        android:id="@+id/long_break_interval_seekbar"
+        app:layout_constraintLeft_toLeftOf="@+id/work_duration_text"
+        app:layout_constraintTop_toBottomOf="@+id/long_break_interval_text"
+        android:layout_marginTop="@dimen/setting_sub_item_margin_top"
+        android:layout_width="0dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
